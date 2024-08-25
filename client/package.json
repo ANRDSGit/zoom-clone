@@ -1,4 +1,5 @@
 {
+	"homepage": "https://ANRDSGit.github.io/zoom-clone",
 	"name": "client",
 	"version": "0.1.0",
 	"private": true,
@@ -25,6 +26,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start --openssl-legacy-provider",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "react-scripts build --openssl-legacy-provider",
 		"test": "react-scripts test --openssl-legacy-provider",
 		"eject": "react-scripts eject",
