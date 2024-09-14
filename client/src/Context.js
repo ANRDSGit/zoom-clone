@@ -4,9 +4,7 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('https://zoom-clone-server-iota.vercel.app', {
-  transports: ['websocket'] // Force WebSocket transport
-});
+const socket = io('https://zoom-clone-server-iota.vercel.app/');
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
@@ -38,7 +36,7 @@ const ContextProvider = ({ children }) => {
         setStream(currentStream);
 
         myVideo.current.srcObject = currentStream;
-
+        
       });
 
     socket.on('me', (id) => setMe(id));
