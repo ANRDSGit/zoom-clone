@@ -2,12 +2,14 @@ const app = require("express")();
 const server = require("http").createServer(app);
 const cors = require("cors");
 
-const io = require("socket.io")(server, {
-	cors: {
-		origin: "*",
-		methods: [ "GET", "POST" ]
-	},
-	transports: ['websocket'], // Force WebSocket only
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "http://localhost:5000",
+        methods: ["GET", "POST"],
+        transports: ['websocket', 'polling'],
+        credentials: true
+    },
+    allowEIO3: true
 });
 
 
